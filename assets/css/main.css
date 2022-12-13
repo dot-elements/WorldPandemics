@@ -8601,3 +8601,10 @@ input, select, textarea {
 			#wrapper.divided > .invert:first-child {
 				box-shadow: none !important;
 			}
+
+
+/* custom css */
+
+.d3-chart {
+	width: 50% !important;
+}
