@@ -1,6 +1,5 @@
         // const width = 680
         // const height = 480
-        document.getElementById("first").children[0].style.width = "10px";
         let box = document.querySelector('#disease_rankings');
         let width = box.offsetWidth;
         let height = box.offsetHeight;
