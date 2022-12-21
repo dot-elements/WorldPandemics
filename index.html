@@ -11,74 +11,160 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://d3js.org/d3.v4.js"></script>
+		<script src="https://d3js.org/d3-array.v2.min.js"></script>
+
+
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
+				<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right" style="background: darkslategrey;">
+					<div class="content">
+						<h1>Super Catchy Title</h1>
+						<h3>A really nice subtitle</h3>
+					</div>
+				</section>
 
 				<!-- One -->
-					<section class="banner style1 orient-left content-align-left image-position-right fullscreen onload-image-fade-in onload-content-fade-right">
+					<section class="banner style1 orient-left content-align-left image-position-right onload-image-fade-in onload-content-fade-right" id="casues">
 						<div class="content">
 							<h1>Did we get better at combating diseases?</h1>
 							<p class="major">Historically, infectious diseases (IDs) have been the most important contributor to human morbidity and mortality until relatively recent times, when non-communicable diseases (NCDs) began to rival, and sometimes exceed, infections. Today, IDs still account for a large proportion of death and disability worldwide and in certain regions remain the most important cause of ill health. The Global Burden of Disease Study (GBDS) estimates that, in the year 2000, infectious diseases were responsible for 22% of all deaths and 27% of disability-adjusted life years (DALYs) worldwide (WHO, 2002).</p>
-							<!-- <ul class="actions stacked">
-								<li><a href="#first" class="button big wide smooth-scroll-middle">Get Started</a></li>
-							</ul> -->
+						
 						</div>
-						<div class="image">
-							<img src="images/banner.jpg" alt="" />
-						</div>
+						<!-- <div class="image" id="donut">
+							<script type='module' src="assets/js/causes.js"></script>
+							
+						</div> -->
 					</section>
 
 				<!-- Two -->
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="first">
+					<section class="banner style1 orient-right content-align-left image-position-center onscroll-image-fade-in" id="life">
 						<div class="content">
-							<h2>Magna etiam feugiat</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
-							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
+							<h2>Yes, we did!</h2>
+							<p>Life expectancy has increased dramatically in the past 100 years. 
+								Marked changes were seen during the 1990s, when many countries embarked on rapid economic reforms encompassing market liberalization, deregulation and privatization. Within a decade, populations living within market economies, or in countries engaged in market-oriented reforms, rose from one billion to roughly five and a half billion								
+							</p>
 						</div>
+						<!-- <div class="image" id="chart1">
+							<script type='module' src="assets/js/life-expectancy.js"></script>
+						</div> -->
+					</section>
+				
+						<!-- Sebi content 1 -->
+						<section class="banner style1 orient-left content-align-left image-position-center onscroll-image-fade-in" id="first">
+							<div class="content">
+								<h2>Past infections</h2>
+								<p>Among the many challenges to health, infectious diseases stand out for their ability to have a profound impact on the human species. Great pandemics and local epidemics alike have influenced the course of wars, determined the fates of nations and empires, and affected the progress of civilization, making infections compelling actors in the drama of human history. Infections have distinct characteristics that, when considered together, set them apart from other diseases. Among these characteristics is their unpredictability and their potential for explosive global effect, as exemplified by the bubonic–pneumonic plague pandemic in the 14th century, the 1918 influenza pandemic, the pandemic of human immunodeficiency virus (HIV) infection and the acquired immunodeficiency syndrome (AIDS), along site the current Covid-19 pandemic.</p>
+								<!-- <ul class="actions stacked">
+									<li><a href="#" class="button">Learn More</a></li>
+								</ul> -->
+							</div>
+							<div class="image d3-chart" id="disease_rankings">
+								<script type='module' src="assets/js/diseaseRankings.js"></script>
+							</div>
+						</section>
 						
-						<div class="image d3-chart" id="measles">
-							<select id="selectButton" style="height:50px;width:200px"></select>
+							<!-- Sebi content 2 -->
+					<section class="spotlight style1 orient-right align-center image-position-center onscroll-image-fade-in">
+							<div class="content">
+								<h2>Challenges</h2>
+								<p>Unprecedented progress in the prevention and treatment of infectious diseases has been made worldwide, resulting in a major decrease in child and overall mortality and contributing to an epidemiological transition to chronic diseases. Nevertheless, factors such as urbanization, migration, climate change, environmental degradation and natural disasters pose a great challenge this progress greatly. </p>
+								<!-- <ul class="actions stacked">
+									<li><a href="#" class="button">Learn More</a></li>
+								</ul> -->
+							<!-- </div>
+							<div class="image">
+								<img src="images/spotlight02.jpg" alt="" />
+							</div> -->
+					</section>
+					<section class="banner style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>Urbanization</h2>
+							<p>It is considered today that 47% of the world’s population is urbanized. By 2030, it will be 60% or 4.9 billion people. This historical trend towards urbanization is particularly marked in the developing world, but the rapid urban growth puts a strain on the capacity of local and national governments to come up with adequate provision of water, electricity, sewage and social services. As a result, this increases population in slums as well as the rate diseases spread. Historical scourges such as tuberculosis, hepatitis and sexually transmitted infections, and new diseases such as AIDS find ideal breeding conditions in this new, radically altered environment.</p>
+							<!-- <ul class="actions stacked">
+								<li><a href="#" class="button">Learn More</a></li>
+							</ul> -->
+						</div>
+						<div class="image d3-chart" id="slums">
+							<script type='module' src="assets/js/slums.js"></script>
+							<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 						</div>
 					</section>
+				</section>
+				<section class="banner style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+					<div class="content">
+						<h2>Sanitation</h2>
+						<p>Nevertheless, the fight against pandemics is never over. A leading risk factor in infectious disease spread, especially in lower developed countries is sanitation. Poor sanitation evelates diseases such as cholera, diarrhoea, dysentery, hepatitis A, typhoid and polio. It also exacerbates malnutrition, and in particular, childhood stunting. </p>
+						<p>Where are we today? In 2020, just over half (54%) of the world population had access to safely managed sanitation. It is shocking that nearly one-in-two do not. Around 6% does not beneficiate any sanitation facilities at all, and instead have to practice open defecation. In the chart we see the breakdown of sanitation access globally, and across regions and income groups. We see that in countries at the lowest incomes, less than one-fifth of the population have safe sanitation. Much like safe drinking water, most live in Sub-Saharan Africa.</p>
+						<!-- <ul class="actions stacked">
+							<li><a href="#" class="button">Learn More</a></li>
+						</ul> -->
+					</div>
+					<div class="image d3-chart" id="sanitation">
+						<script type='module' src="assets/js/sanitation.js"></script>
+						<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+					</div>
+				</section>
 
 				<!-- Three -->
-					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
+					<section class="banner style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
-							<h2>Tempus adipiscing</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
-							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
+							<h2>Population mobility</h2>
+							<p>There are several reasons why population mobility and the incidence and spread of infections are closely linked. First, the conditions which lead people to migrate are akin to those which favour the emergence of new infections and the breakdown of structures and systems to control well understood infections. Poverty, overcrowding, repression and economic failure, for example, not only encourage people
+								to move but often lead to breakdown of public health infrastructure, and of provision of housing, safe
+								and sufficient drinking water, sanitation, and education.</p>
+								
+								<p>It is well recognized that human and cargo traffic facilitates the movement of pathogens across the world (Aron and Patz, 2001) and, since most infectious diseases have an
+								incubation period exceeding 36 hours, and any part of the world can now be reached within this timeframe, the potential for rapid geographical spread is apparent</p>
+								</p>
 						</div>
-						<div class="image d3-chart" id="tetanus"></div>
-						</div>
+						<!-- <div class="image" id="tourism">
+							<script type='module' src="assets/js/tourism.js"></script>
+						</div> -->
 					</section>
+
+					
 
 				<!-- Four -->
-					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
-						<div class="content">
-							<h2>Pharetra etiam nulla</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum dolor sit amet.</p>
-							<ul class="actions stacked">
-								<li><a href="#" class="button">Learn More</a></li>
-							</ul>
-						</div>
-						<div class="image">
-							<img src="images/spotlight03.jpg" alt="" />
-						</div>
-					</section>
-
-				<!-- Five -->
 					<section class="wrapper style1 align-center">
 						<div class="inner">
-							<h2>Massa sed condimentum</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+							<h2>Superbugs</h2>
+							<p> The emergence and spread of drug-resistant pathogens that have acquired new resistance mechanisms, leading to antimicrobial resistance, continues to threaten our ability to treat common infections.
+								 Especially alarming is the rapid global spread of multi- and pan-resistant bacteria (also known as “superbugs”) that cause infections that are not treatable with existing antimicrobial medicines such as antibiotics.
+								The main cause of AMR is the misuse of antibiotics, whether that is in the health industry or in livestock farming.</p>
+							<ul class="actions stacked">
+								<li>WHO has declared that AMR is one of the top 10 global public health threats facing humanity.</li>
+								<li> Misuse and overuse of antimicrobials are the main drivers in the development of drug-resistant pathogens.
+								</li>
+								<li> The United Nations warns that without major change, by 2050 drug-resistant disease could cause 10 million deaths a year, along with catastrophic damage to the global economy
+								</li>
+							</ul>
 						</div>
+					</section>
+				
+					<section class="spotlight style1 orient-right content-align-left image-position-center onscroll-image-fade-in">
+						<div class="content">
+							<h2>What is being done?</h2>
+							<p>The WHO send out a yearly self-assesment survey regarding AMR to 166 countries. A few of the questions from the survey can be see below:</p>
+							<ul>
+								<li>Q1: Country has laws or regulations on prescription and sale of antimicrobials, for human use</li>
+								<li>Q2: Country has laws or regulations on prescription and sale of antimicrobials for terrestrial animal use</li>
+								<li>Q3: Country has laws or regulations on prescription and sale of medicated feed</li>
+								<li>Q4: Do school-going children and youth (primary and secondary) receive education on antimicrobial resistance, as a long-term investment in mitigating AMR?</li>
+								<li>Q5: Is the country using relevant antimicrobial consumption/use data to inform operational decision making and amend policies?</li>
+								<li>Q6: Has the country established or starting the implementation of an Integrated Surveillance System for Antimicrobial Resistance?</li>
+							</ul>
+						</div>
+						<!-- <div class="image" id="amr">
+							<script src="assets/js/amr.js"></script>
+						</div> -->
+					</section>
+				<!-- Five -->
+					<section class="wrapper style1 align-center">
+			
 
 						<!-- Gallery -->
 							<div class="gallery style2 medium lightbox onscroll-fade-in">
@@ -234,67 +320,67 @@
 					<section class="wrapper style1 align-center">
 						<div class="inner">
 							<h2>Ipsum sed consequat</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
+							<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi id ante sed ex pharetra lacinia sit amet vel massa. Donec facilisis laoreet nulla eu bibendum. Donec ut ex risus. Fusce lorem lectus, pharetra pretium massa et, hendrerit vestibulum odio lorem ipsum.</p>
 							<div class="items style1 medium onscroll-fade-in">
 								<section>
 									<span class="icon style2 major fa-gem"></span>
 									<h3>Lorem</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-save"></span>
 									<h3>Ipsum</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-chart-bar"></span>
 									<h3>Dolor</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-wifi"></span>
 									<h3>Amet</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-cog"></span>
 									<h3>Magna</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon style2 major fa-paper-plane"></span>
 									<h3>Tempus</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-desktop"></span>
 									<h3>Aliquam</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-sync-alt"></span>
 									<h3>Elit</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-hashtag"></span>
 									<h3>Morbi</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-bolt"></span>
 									<h3>Turpis</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-envelope"></span>
 									<h3>Ultrices</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 								<section>
 									<span class="icon solid style2 major fa-leaf"></span>
 									<h3>Risus</h3>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
+									<p>Lorem ipsum dolor sit amet, consePopulation mobility elit. Morbi dui turpis, cursus eget orci amet aliquam congue semper. Etiam eget ultrices risus nec tempor elit.</p>
 								</section>
 							</div>
 						</div>
