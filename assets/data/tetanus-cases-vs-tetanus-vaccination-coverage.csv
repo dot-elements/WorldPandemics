@@ -1,4 +1,4 @@
-Entity,Code,Year,Incidence - Tetanus - Sex: Both - Age: All Ages (Rate),DTP3 (% of one-year-olds immunized),Continent
+Entity,Code,year,cases,percentage_vaccinated,Continent
 Abkhazia,OWID_ABK,2015,,,Asia
 Afghanistan,AFG,1990,33.27,25,
 Afghanistan,AFG,1991,36.86,23,

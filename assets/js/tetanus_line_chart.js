@@ -13,7 +13,7 @@ var svg = d3.select("#my_dataviz")
     .attr("transform", `translate(${margin.left},${margin.top})`);
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/dot-elements/WorldPandemics/Georgi/assets/data/tetanus_world_only_combined.csvv",
+d3.csv("https://raw.githubusercontent.com/dot-elements/WorldPandemics/Georgi/assets/data/tetanus_world_only_combined.csv",
 
   // When reading the csv, I must format variables:
   function(d){
