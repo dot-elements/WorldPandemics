@@ -20,7 +20,7 @@ var margin = {top: 10, right: 30, bottom: 20, left: 50},
     height = 400 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#amr")
+var svg = d3.select("#amr-bar")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -33,11 +33,9 @@ d3.csv("assets/data/amr.csv", function(data) {
 
   // List of subgroups = header of the csv files = soil condition here
   var subgroups = data.columns.slice(1)
-  console.log(subgroups)
 
   // List of groups = species here = value of the first column called group -> I show them on the X axis
   var groups = d3.map(data, function(d){return(d.question)})
-    console.log(groups)
   // Add X axis
   var x = d3.scaleBand()
       .domain(groups)
