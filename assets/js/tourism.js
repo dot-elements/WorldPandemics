@@ -1,10 +1,10 @@
 
-var margin = {left: 100, right: 50, top: 100, bottom: -200 };
-
-// var parent = document.getElementById("life").parentElement;
-
-var width = screen.width/2 - margin.left - margin.right;
-var height = screen.height * 0.5 - margin.top - margin.bottom;
+let box = document.querySelector("#tourism");
+let width = box.offsetWidth;
+let height = box.offsetHeight;
+const margin = { top: 80, right: 50, bottom: 30, left: 50 };
+const plotHeight = height - margin.top - margin.bottom;
+const plotWidth = width - margin.left - margin.right;
 
 var max = 0;
 
@@ -20,11 +20,11 @@ d3.csv("assets/data/tourism.csv", function(data) {
 
 		var y = d3.scaleLinear()
 					.domain([0,max])
-					.range([height,0]);
+					.range([plotHeight,0]);
 
 		var x = d3.scaleLinear()
 					.domain([minDate,maxDate])
-					.range([0,width]);
+					.range([0,plotWidth]);
 
 		var yAxis = d3.axisLeft(y);
 
@@ -73,14 +73,14 @@ d3.csv("assets/data/tourism.csv", function(data) {
 
 		chartGroup.append("g")
 			.attr("class","axis x")
-			.attr("transform","translate(0,"+height+")")
+			.attr("transform","translate(0,"+plotHeight+")")
 			.call(xAxis);
 
         chartGroup.append("text")
             .attr("class", "x label")
             .attr("text-anchor", "end")
-            .attr("x", width)
-            .attr("y", height + 30)
+            .attr("x", plotWidth)
+            .attr("y", plotHeight - 10)
             .attr("fill","black")
             .text("Time (year)");
         chartGroup.append("text")

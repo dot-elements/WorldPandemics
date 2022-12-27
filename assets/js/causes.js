@@ -33,7 +33,6 @@ d3.csv("assets/data/total-number-of-deaths-by-cause.csv", function(data) {
     "#FFFFBF", "#FEE08B", "#FDAE61", "#F46D43", "#D53E4F", "#9E0142"]);
 
   data = data.filter(function(d){return d.entity.match(/^World$/) })
-  console.log(data[0])
   //stack the data?
   var stackedData = d3.stack()
     .keys(keys)
@@ -175,7 +174,7 @@ d3.csv("assets/data/total-number-of-deaths-by-cause.csv", function(data) {
       .data(keys)
       .enter()
       .append("rect")
-        .attr("x", 400)
+        .attr("x", 300)
         .attr("y", function(d,i){ return 10 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
         .attr("width", size)
         .attr("height", size)
@@ -188,7 +187,7 @@ d3.csv("assets/data/total-number-of-deaths-by-cause.csv", function(data) {
       .data(keys)
       .enter()
       .append("text")
-        .attr("x", 400 + size*1.2)
+        .attr("x", 300 + size*1.2)
         .attr("y", function(d,i){ return 10 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
         .style("fill", function(d){ return color(d)})
         .text(function(d){ return d})

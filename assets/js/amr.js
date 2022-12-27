@@ -14,8 +14,14 @@
 // 4.5.a Do you have a national plan or system in place for monitoring sales/use of antimicrobials in animals?
 // 4.9 Biosecurity and good animal husbandry practices to reduce the use of antimicrobials and minimize development and transmission of AMR in terrestrial animal production
 
+// let box = document.querySelector("#amr-bar");
+// let width = box.offsetWidth;
+// let height = box.offsetHeight;
+// const margin = { top: 80, right: 50, bottom: 0, left: 50 };
+// const plotHeight = height - margin.top - margin.bottom;
+// const plotWidth = width - margin.left - margin.right;
 
-var margin = {top: 10, right: 30, bottom: 20, left: 50},
+var margin = {top: 100, right: 30, bottom: 20, left: 50},
     width = 460 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 

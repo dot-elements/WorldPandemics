@@ -44,7 +44,7 @@ function update(selectedVar) {
     var u = svg.selectAll("rect")//.filter(function(d){return d.fill == "#69b3a2"})
       .data(data)
     // update 
-    console.log(u)
+    console.log(u.filter(function(d) {return d.id !== "badbar"}))
     u
       .enter()
       .append("rect")
