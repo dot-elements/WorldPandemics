@@ -47,7 +47,7 @@ d3.csv("assets/data/total-number-of-deaths-by-cause.csv", function(data) {
     .range([ 0, width ]);
   var xAxis = svg.append("g")
     .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x).ticks(5))
+    .call(d3.axisBottom(x).ticks(5).tickFormat((d,i) => d.toString()))
 
   // Add X axis label:
   svg.append("text")

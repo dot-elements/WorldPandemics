@@ -33,6 +33,8 @@ svg
   .style("font-size", "18px")
   .style("font-weight", "bold");
 let data;
+var index = 0
+
 d3.csv("assets/data/sanitation_Acess.csv", function (json) {
   json.forEach(function (d) {
     (d["san_sm"] = +d["san_sm"]),
@@ -41,23 +43,24 @@ d3.csv("assets/data/sanitation_Acess.csv", function (json) {
       (d["san_unimp"] = +d["san_unimp"]),
       (d["san_od"] = +d["san_od"]);
   });
-  // console.log(json)
 
   data = json;
 
-  // List of subgroups = header of the csv files = soil condition here
-  var subgroups = data.columns.slice(3);
-  // console.log(subgroups);
-  // List of groups = species here = value of the first column called group -> I show them on the X axis
 
+var allGroup = []
+for(let i =2000; i<= 2020; i++)
+  allGroup.push(i)
+
+  var subgroups = data.columns.slice(3);
+  // List of groups. Value of the first column called group -> I show them on the X axis
   var groups = d3.map(data, function (d) {
     return d.Entity;
   });
-  // console.log(groups)
   // Add X axis
   var x = d3.scaleBand().domain(groups).range([0, width]).padding([0.2]);
   svg
     .append("g")
+    .attr("id", "x-axis")
     .attr("transform", "translate(0," + plotHeight + ")")
     .call(d3.axisBottom(x).tickSizeOuter(0))
     .selectAll("text")
@@ -74,66 +77,31 @@ d3.csv("assets/data/sanitation_Acess.csv", function (json) {
   );
 
   // color palette = one color per subgroup
-  var color = d3.scaleOrdinal().domain(subgroups).range(d3.schemeSet2);
+  var color = d3.scaleOrdinal().domain(subgroups).range(['#00876c','#78ab63','#dac767','#e18745','#d43d51']);
 
   //stack the data? --> stack per subgroup
   var stackedData = d3.stack().keys(subgroups)(data);
-
   // ----------------
   // Highlight a specific subgroup when hovered
   // ----------------
 
-  // What happens when user hover a bar
-  var mouseover = function (d) {
-    // what subgroup are we hovering?
-    var subgroupName = d3.select(this.parentNode).datum().key; // This was the tricky part
-    var subgroupValue = d.data[subgroupName];
-    // Reduce opacity of all rect to 0.2
-    d3.selectAll(".myRect").style("opacity", 0.2);
-    // Highlight all rects of this subgroup with opacity 0.8. It is possible to select them since they have a specific class = their name.
-    d3.selectAll("." + subgroupName).style("opacity", 1);
-  };
 
-  // When user do not hover anymore
-  var mouseleave = function (d) {
-    // Back to normal opacity: 0.8
-    d3.selectAll(".myRect").style("opacity", 0.8);
-  };
+let filteredData = data.filter(x => x['Year'] == '2000')
+      filteredData.columns = data.columns
+update(filteredData, 2000)
 
-  // Show the bars
-  svg
-    .append("g")
-    .selectAll("g")
-    // Enter in the stack data = loop key per key = group per group
-    .data(stackedData)
-    .enter()
-    .append("g")
-    .attr("fill", function (d) {
-      return color(d.key);
-    })
-    .attr("class", function (d) {
-      return "myRect " + d.key;
-    }) // Add a class to each subgroup: their name
-    .selectAll("rect")
-    // enter a second time = loop subgroup per subgroup to add all rectangles
-    .data(function (d) {
-      return d;
-    })
-    .enter()
-    .append("rect")
-    .attr("x", function (d) {
-      return x(d.data.Entity);
-    })
-    .attr("y", function (d) {
-      return y(d[1]);
-    })
-    .attr("height", function (d) {
-      return y(d[0]) - y(d[1]);
-    })
-    .attr("width", x.bandwidth())
-    .attr("stroke", "grey")
-    .on("mouseover", mouseover)
-    .on("mouseleave", mouseleave);
+  d3.interval(function(){
+    if (index >= allGroup.length)
+        index = 0
+    update(sampleFromData(data, allGroup[index]), allGroup[index]); 
+    index++ 
+  }, 1000);
+
+  function sampleFromData(data, year){
+    let filteredData = data.filter(x => x['Year'] == year.toString())
+    filteredData.columns = data.columns
+    return filteredData
+  }
 
   //////////
   // LEGEND //
@@ -161,8 +129,6 @@ d3.csv("assets/data/sanitation_Acess.csv", function (json) {
     .style("fill", function (d) {
       return color(d.key);
     })
-    .on("mouseover", mouseover)
-    .on("mouseleave", mouseleave);
 
   // Add one dot in the legend for each name.
 
@@ -191,6 +157,36 @@ d3.csv("assets/data/sanitation_Acess.csv", function (json) {
     })
     .attr("text-anchor", "left")
     .style("alignment-baseline", "middle")
-    .on("mouseover", mouseover)
-    .on("mouseleave", mouseleave);
+
+    function update(filteredData, year) {
+
+        d3.selectAll("svg text")
+        .filter(function() {
+          return /^Share/.test(d3.select(this).text());  // Check if text begin with a "C"
+        })
+        .text("Share of population with access to sanitation facilities " + year.toString());
+      var stack = d3.stack().keys(subgroups)
+      subgroups.forEach(function(key, key_index){
+  
+          var bar = svg.selectAll(".myRect" + key)
+              .data(stack(filteredData)[key_index], function(d){ return d.data.Entity + "-" + key; });
+  
+          bar
+            .transition()
+              .attr("x", function(d){ return x(d.data.Entity); })
+              .attr("y", function(d){ return y(d[1]); })
+              .attr("height", function(d){ return y(d[0]) - y(d[1]); });
+  
+          bar.enter().append("rect")
+              //.attr("class", function(d){ return "bar bar-" + key; })
+              .attr("class", function (d) { return "myRect " + key;}) // Add a class to each subgroup: their name
+              .attr("x", function(d){ return x(d.data.Entity); })
+              .attr("y", function(d){ return y(d[1]); })
+              .attr("height", function(d){ return y(d[0]) - y(d[1]); })
+              .attr("width", x.bandwidth())
+              .attr("fill", function(d){ return color(key); })
+                   .attr("stroke", "grey")
+  
+        }); 
+    }
 });
