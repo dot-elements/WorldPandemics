@@ -11,8 +11,8 @@ const plotWidth = width - margin.left - margin.right;
 var svg = d3
   .select("#slums")
   .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+  .attr("width", plotWidth + margin.left + margin.right + 100)
+  .attr("height", plotHeight + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 svg
@@ -48,7 +48,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
   var keys = json.columns.slice(-2);
   // console.log(keys);
   // color palette
-  var color = d3.scaleOrdinal().domain(keys).range(d3.schemeSet2);
+  var color = d3.scaleOrdinal().domain(keys).range(['#00876c','#d43d51']);
   //stack the data?
   var stackedData = d3.stack().keys(keys)(data);
 
@@ -65,17 +65,20 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
       })
     )
     .range([0, plotWidth]);
+  let xAxisGenerator = d3.axisBottom(x).tickValues([2000,2005,2010,2015,2018])
+  xAxisGenerator.tickFormat((d,i) => d.toString())
   var xAxis = svg
     .append("g")
-    .attr("transform", `translate(${margin.left}, ${plotHeight + margin.top})`)
-    .call(d3.axisBottom(x).ticks(5));
+    .attr("transform", `translate(${margin.left}, ${plotHeight })`)
+    .call(xAxisGenerator);
+
 
   // Add X axis label:
   svg
     .append("text")
     .attr("text-anchor", "end")
     .attr("x", margin.left + plotWidth + 35)
-    .attr("y", margin.top + plotHeight + 25)
+    .attr("y", margin.top + plotHeight - 70)
     .text("Time (year)")
     .style("font-size", "14px")
     .style("font-weight", "bold");
@@ -98,7 +101,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
       d3.max(data, (d) => d["Urban population living in slums"]) +
         d3.max(data, (d) => d["Urban population not living in slums"]),
     ])
-    .range([plotHeight, 0]);
+    .range([plotHeight - margin.top , 0]);
   svg
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`)
@@ -114,8 +117,8 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
     .append("svg:clipPath")
     .attr("id", "clip")
     .append("svg:rect")
-    .attr("width", width)
-    .attr("height", height)
+    .attr("width", plotWidth)
+    .attr("height", plotHeight)
     .attr("x", 0)
     .attr("y", 0);
 
@@ -124,7 +127,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
     .brushX() // Add the brush feature using the d3.brush function
     .extent([
       [0, 0],
-      [width, height],
+      [plotWidth, plotHeight],
     ]) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
     .on("end", updateChart); // Each time the brush selection changes, trigger the 'updateChart' function
 
@@ -132,7 +135,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
   var areaChart = svg
     .append("g")
     .attr("clip-path", "url(#clip)")
-    .attr("transform", `translate(${margin.left}, ${margin.top})`);
+    .attr("transform", `translate(${margin.left}, ${margin.bottom })`);
 
   // Area generator
   var area = d3
@@ -173,7 +176,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
 
   // A function that update the chart for given boundaries
   function updateChart() {
-    extent = d3.event.selection;
+    let extent = d3.event.selection;
 
     // If no selection, back to initial coordinate. Otherwise, update X axis domain
     if (!extent) {
