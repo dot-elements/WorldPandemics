@@ -17,7 +17,7 @@ svg
   .attr("x", width / 2 + 100)
   .attr("y", (margin.top / 3) * 2)
   .attr("text-anchor", "middle")
-  .text("Burden of disease by cause")
+  .text("Worldwide burden of disease, by cause ")
   .style("font-size", "18px")
   .style("font-weight", "bold");
 

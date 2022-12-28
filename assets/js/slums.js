@@ -11,7 +11,7 @@ const plotWidth = width - margin.left - margin.right;
 var svg = d3
   .select("#slums")
   .append("svg")
-  .attr("width", plotWidth + margin.left + margin.right + 100)
+  .attr("width", plotWidth + margin.left + margin.right )
   .attr("height", plotHeight + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
@@ -34,13 +34,6 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
       (d["Urban population living in slums"] =
         +d["Urban population not living in slums"]);
   });
-  // console.log(json)
-  //////////
-  // GENERAL //
-  //////////
-  //   data = json.filter(obj => {
-  //     return obj.Entity === "World"
-  //     })
 
   data = json;
   // List of groups = header of the csv files
@@ -65,19 +58,17 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
       })
     )
     .range([0, plotWidth]);
-  let xAxisGenerator = d3.axisBottom(x).tickValues([2000,2005,2010,2015,2018])
-  xAxisGenerator.tickFormat((d,i) => d.toString())
   var xAxis = svg
     .append("g")
     .attr("transform", `translate(${margin.left}, ${plotHeight })`)
-    .call(xAxisGenerator);
+    .call(d3.axisBottom(x).ticks(5).tickFormat((d,i) => d.toString()));
 
 
   // Add X axis label:
   svg
     .append("text")
     .attr("text-anchor", "end")
-    .attr("x", margin.left + plotWidth + 35)
+    .attr("x", margin.left + plotWidth )
     .attr("y", margin.top + plotHeight - 70)
     .text("Time (year)")
     .style("font-size", "14px")
@@ -135,7 +126,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
   var areaChart = svg
     .append("g")
     .attr("clip-path", "url(#clip)")
-    .attr("transform", `translate(${margin.left}, ${margin.bottom })`);
+    .attr("transform", `translate(${margin.left}, ${margin.bottom +20})`);
 
   // Area generator
   var area = d3
@@ -192,7 +183,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
     }
 
     // Update axis and area position
-    xAxis.transition().duration(1000).call(d3.axisBottom(x).ticks(5));
+    xAxis.transition().duration(1000).call(d3.axisBottom(x).ticks(5).tickFormat((d,i) => d.toString()));
     areaChart.selectAll("path").transition().duration(1000).attr("d", area);
   }
 
