@@ -1,4 +1,4 @@
-var margin = { top: 50, right: 200, bottom: 30, left: 60 },
+var margin = { top: 100, right: 200, bottom: 30, left: 60 },
   width = document.getElementById("measles").clientWidth - 300,
   height = 300 - margin.top - margin.bottom;
 
@@ -145,6 +145,15 @@ d3.csv(
       .style("stroke", "#fc8e62")
       .style("stroke-width", 4)
       .style("fill", "none");
+
+    svg
+      .append("text")
+      .attr("class", "title")
+      .attr("x", width / 2)
+      .attr("text-anchor", "middle")
+      .text("Measles cases and vaccination rate")
+      .style("font-size", "18px")
+      .style("font-weight", "bold");
 
     // A function that update the chart
     function update(selectedGroup) {
