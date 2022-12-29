@@ -18,7 +18,6 @@ const svg = d3
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", `translate(${margin.left},${margin.top})`);
-console.log("sdf");
 //Read the data
 d3.csv(
   "assets\\data\\measles_from_1980_6_countries.csv",
@@ -44,8 +43,6 @@ d3.csv(
     };
   },
   function (data) {
-    console.log("my print::::::");
-    console.log(data);
     // List of groups (here I have one group per column)
     const countries = [
       "World",
