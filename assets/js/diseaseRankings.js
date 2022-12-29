@@ -103,7 +103,7 @@ function update(new_data) {
   bars
     .enter()
     .append("rect")
-    .attr("width", (data) => scaleX(data.value))
+    .attr("width", (data) =>  scaleX(data.value))
     .attr("height", scaleY.bandwidth())
     .attr("y", (data) => scaleY(data.disease))
     .attr("x", 0.5)

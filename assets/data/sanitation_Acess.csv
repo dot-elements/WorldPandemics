@@ -1,12 +1,232 @@
 Entity,Code,Year,san_sm,san_bas_minus_sm,san_lim,san_unimp,san_od
+World,OWID_WRL,2000,28.64,27.08,5.62,17.2,21.45
+World,OWID_WRL,2001,29.14,27.36,5.8,16.94,20.76
+World,OWID_WRL,2002,29.75,27.93,5.98,16.33,20.02
+World,OWID_WRL,2003,30.85,27.98,6.14,15.75,19.28
+World,OWID_WRL,2004,32.14,27.85,6.3,15.19,18.52
+World,OWID_WRL,2005,33.26,27.95,6.42,14.6,17.76
+World,OWID_WRL,2006,34.51,27.87,6.56,14.08,16.98
+World,OWID_WRL,2007,35.83,27.75,6.67,13.55,16.2
+World,OWID_WRL,2008,37.17,27.6,6.77,13.04,15.42
+World,OWID_WRL,2009,38.54,27.42,6.86,12.54,14.64
+World,OWID_WRL,2010,39.95,27.19,6.95,12.06,13.85
+World,OWID_WRL,2011,41.31,26.92,7.03,11.6,13.14
+World,OWID_WRL,2012,42.75,26.64,7.1,11.15,12.36
+World,OWID_WRL,2013,44.2,26.35,7.16,10.71,11.57
+World,OWID_WRL,2014,45.67,26.04,7.22,10.28,10.79
+World,OWID_WRL,2015,47.14,25.71,7.27,9.87,10.01
+World,OWID_WRL,2016,48.63,25.36,7.31,9.47,9.23
+World,OWID_WRL,2017,50.12,24.99,7.35,9,8.54
+World,OWID_WRL,2018,51.59,24.62,7.39,8.62,7.79
+World,OWID_WRL,2019,53.02,24.25,7.42,8.26,7.05
 World,OWID_WRL,2020,53.95,24.36,7.44,7.91,6.34
+High income,,2000,83.24,15.12,0.43,1.13,0.09
+High income,,2001,83.37,14.83,0.4,1.31,0.09
+High income,,2002,83.59,14.69,0.39,1.25,0.08
+High income,,2003,83.82,14.51,0.39,1.2,0.07
+High income,,2004,84.14,14.24,0.39,1.15,0.07
+High income,,2005,84.52,13.92,0.39,1.11,0.07
+High income,,2006,84.89,13.61,0.39,1.04,0.06
+High income,,2007,85.27,13.29,0.39,0.98,0.06
+High income,,2008,85.65,12.98,0.39,0.92,0.05
+High income,,2009,86.03,12.66,0.39,0.86,0.05
+High income,,2010,82.18,16.58,0.39,0.81,0.05
+High income,,2011,82.67,16.15,0.39,0.76,0.04
+High income,,2012,83.15,15.72,0.39,0.7,0.04
+High income,,2013,83.62,15.3,0.39,0.65,0.03
+High income,,2014,84.09,14.89,0.39,0.6,0.03
+High income,,2015,84.55,14.48,0.38,0.56,0.02
+High income,,2016,85.01,14.07,0.38,0.52,0.02
+High income,,2017,85.44,13.68,0.38,0.48,0.02
+High income,,2018,85.84,13.24,0.38,0.49,0.04
+High income,,2019,86.23,12.87,0.38,0.48,0.04
 High income,,2020,86.57,12.54,0.38,0.47,0.04
+North America and Europe,,2000,70.49,25.36,0.73,3.41,0.02
+North America and Europe,,2001,70.67,25.06,0.7,3.55,0.02
+North America and Europe,,2002,70.94,24.9,0.7,3.45,0.01
+North America and Europe,,2003,71.22,24.72,0.69,3.35,0.01
+North America and Europe,,2004,71.54,24.52,0.69,3.25,0.01
+North America and Europe,,2005,71.85,24.31,0.68,3.15,0.01
+North America and Europe,,2006,72.12,24.16,0.67,3.04,0.01
+North America and Europe,,2007,72.43,23.97,0.66,2.93,0.01
+North America and Europe,,2008,72.73,23.78,0.66,2.82,0.01
+North America and Europe,,2009,73.14,23.49,0.65,2.72,0
+North America and Europe,,2010,73.62,23.11,0.64,2.62,0
+North America and Europe,,2011,74.1,22.73,0.63,2.53,0
+North America and Europe,,2012,74.57,22.36,0.63,2.44,0
+North America and Europe,,2013,75.03,22,0.62,2.35,0
+North America and Europe,,2014,75.48,21.65,0.61,2.26,0
+North America and Europe,,2015,75.91,21.31,0.61,2.17,0
+North America and Europe,,2016,76.34,20.97,0.6,2.09,0
+North America and Europe,,2017,76.76,20.63,0.6,2.01,0
+North America and Europe,,2018,77.16,20.3,0.6,1.95,0
+North America and Europe,,2019,77.52,20,0.6,1.89,0
 North America and Europe,,2020,77.75,19.82,0.59,1.84,0
+Eastern and South-Eastern Asia,,2000,20.73,39.61,5.23,27.36,7.07
+Eastern and South-Eastern Asia,,2001,21.16,40,5.24,26.76,6.84
+Eastern and South-Eastern Asia,,2002,21.81,41.12,5.31,25.24,6.52
+Eastern and South-Eastern Asia,,2003,23.35,41.27,5.34,23.83,6.21
+Eastern and South-Eastern Asia,,2004,25,41.3,5.36,22.45,5.89
+Eastern and South-Eastern Asia,,2005,26.76,41.2,5.37,21.09,5.58
+Eastern and South-Eastern Asia,,2006,28.61,40.99,5.37,19.76,5.27
+Eastern and South-Eastern Asia,,2007,30.56,40.7,5.31,18.46,4.97
+Eastern and South-Eastern Asia,,2008,32.58,40.33,5.24,17.18,4.68
+Eastern and South-Eastern Asia,,2009,34.67,39.86,5.15,15.93,4.39
+Eastern and South-Eastern Asia,,2010,36.84,39.3,5.06,14.7,4.1
+Eastern and South-Eastern Asia,,2011,39.08,38.64,4.95,13.51,3.82
+Eastern and South-Eastern Asia,,2012,41.39,37.9,4.83,12.34,3.54
+Eastern and South-Eastern Asia,,2013,43.75,37.08,4.69,11.2,3.27
+Eastern and South-Eastern Asia,,2014,46.18,36.19,4.54,10.1,2.99
+Eastern and South-Eastern Asia,,2015,48.67,35.22,4.38,9.01,2.73
+Eastern and South-Eastern Asia,,2016,51.21,34.18,4.2,7.95,2.47
+Eastern and South-Eastern Asia,,2017,53.79,33.08,4.02,6.84,2.27
+Eastern and South-Eastern Asia,,2018,56.42,31.92,3.82,5.8,2.04
+Eastern and South-Eastern Asia,,2019,59.06,30.66,3.63,4.82,1.82
 Eastern and South-Eastern Asia,,2020,60.22,30.93,3.42,3.83,1.61
+Upper-middle income,,2000,16.86,47.25,5.07,24.72,6.1
+Upper-middle income,,2001,17.13,47.77,5.06,24.17,5.87
+Upper-middle income,,2002,17.66,48.78,5.08,22.91,5.57
+Upper-middle income,,2003,18.95,49.02,5.08,21.68,5.27
+Upper-middle income,,2004,20.35,49.14,5.07,20.46,4.98
+Upper-middle income,,2005,21.77,49.35,5,19.17,4.71
+Upper-middle income,,2006,23.34,49.28,4.95,18.03,4.4
+Upper-middle income,,2007,24.99,49.11,4.89,16.89,4.13
+Upper-middle income,,2008,26.7,48.86,4.82,15.78,3.84
+Upper-middle income,,2009,31.82,45.19,4.74,14.68,3.58
+Upper-middle income,,2010,33.69,44.74,4.65,13.6,3.32
+Upper-middle income,,2011,35.62,44.21,4.55,12.56,3.06
+Upper-middle income,,2012,37.63,43.59,4.44,11.54,2.81
+Upper-middle income,,2013,39.69,42.89,4.31,10.54,2.57
+Upper-middle income,,2014,41.8,42.13,4.18,9.57,2.32
+Upper-middle income,,2015,43.96,41.3,4.04,8.61,2.09
+Upper-middle income,,2016,46.16,40.4,3.9,7.69,1.85
+Upper-middle income,,2017,48.41,39.42,3.74,6.59,1.84
+Upper-middle income,,2018,50.68,38.39,3.58,5.75,1.6
+Upper-middle income,,2019,52.97,37.27,3.44,4.96,1.36
 Upper-middle income,,2020,54.05,37.38,3.27,4.16,1.14
+Central and Southern Asia,,2000,12.92,10.67,5.8,12.23,58.38
+Central and Southern Asia,,2001,13.79,11.99,6.36,11.9,55.96
+Central and Southern Asia,,2002,14.84,13.23,6.85,11.56,53.51
+Central and Southern Asia,,2003,16.53,13.85,7.33,11.22,51.07
+Central and Southern Asia,,2004,18.64,14.06,7.78,10.87,48.64
+Central and Southern Asia,,2005,20.34,14.7,8.21,10.52,46.22
+Central and Southern Asia,,2006,22.04,15.37,8.61,10.16,43.82
+Central and Southern Asia,,2007,23.79,15.99,9,9.8,41.43
+Central and Southern Asia,,2008,25.54,16.62,9.36,9.43,39.05
+Central and Southern Asia,,2009,27.3,17.26,9.7,9.07,36.68
+Central and Southern Asia,,2010,29.06,17.91,10.02,8.7,34.31
+Central and Southern Asia,,2011,30.83,18.55,10.32,8.35,31.95
+Central and Southern Asia,,2012,32.61,19.2,10.61,7.99,29.6
+Central and Southern Asia,,2013,34.39,19.85,10.87,7.64,27.25
+Central and Southern Asia,,2014,36.17,20.51,11.12,7.29,24.92
+Central and Southern Asia,,2015,37.95,21.17,11.35,6.93,22.6
+Central and Southern Asia,,2016,39.73,21.83,11.56,6.58,20.3
+Central and Southern Asia,,2017,41.51,22.49,11.76,5.95,18.29
+Central and Southern Asia,,2018,43.21,23.23,11.94,5.63,15.99
+Central and Southern Asia,,2019,44.89,23.98,12.1,5.27,13.75
 Central and Southern Asia,,2020,46.57,24.72,12.25,4.9,11.56
+Lower-middle income,,2000,17.3,13.27,8.26,14.21,46.96
+Lower-middle income,,2001,18.16,14.09,8.73,13.9,45.12
+Lower-middle income,,2002,19.08,14.96,9.12,13.6,43.25
+Lower-middle income,,2003,20.38,15.46,9.49,13.3,41.38
+Lower-middle income,,2004,21.99,15.66,9.85,12.99,39.52
+Lower-middle income,,2005,23.34,16.14,10.18,12.69,37.66
+Lower-middle income,,2006,24.68,16.62,10.5,12.39,35.81
+Lower-middle income,,2007,26.09,17.09,10.77,12.08,33.96
+Lower-middle income,,2008,27.5,17.57,11.03,11.78,32.13
+Lower-middle income,,2009,28.93,18.03,11.27,11.47,30.3
+Lower-middle income,,2010,30.37,18.49,11.5,11.16,28.47
+Lower-middle income,,2011,31.81,18.96,11.72,10.86,26.65
+Lower-middle income,,2012,33.26,19.43,11.92,10.55,24.84
+Lower-middle income,,2013,34.7,19.91,12.11,10.25,23.04
+Lower-middle income,,2014,36.13,20.39,12.28,9.94,21.26
+Lower-middle income,,2015,37.56,20.87,12.44,9.63,19.5
+Lower-middle income,,2016,38.98,21.35,12.59,9.32,17.75
+Lower-middle income,,2017,40.4,21.83,12.73,8.98,16.05
+Lower-middle income,,2018,41.76,22.37,12.85,8.64,14.38
+Lower-middle income,,2019,43.07,22.93,12.96,8.27,12.77
 Lower-middle income,,2020,44.34,23.48,13.04,7.93,11.2
+Western Asia and Northern Africa,,2000,24.79,53.41,5.4,7.21,9.19
+Western Asia and Northern Africa,,2001,25.23,53.24,5.38,7.13,9.03
+Western Asia and Northern Africa,,2002,25.89,53.09,5.27,6.9,8.85
+Western Asia and Northern Africa,,2003,26.49,52.96,5.19,6.74,8.63
+Western Asia and Northern Africa,,2004,27.23,52.69,5.1,6.58,8.4
+Western Asia and Northern Africa,,2005,28.05,52.51,4.96,6.51,7.97
+Western Asia and Northern Africa,,2006,28.92,52.29,4.82,6.45,7.53
+Western Asia and Northern Africa,,2007,29.94,51.93,4.67,6.37,7.09
+Western Asia and Northern Africa,,2008,30.97,51.56,4.52,6.38,6.57
+Western Asia and Northern Africa,,2009,31.99,51.18,4.37,6.32,6.15
+Western Asia and Northern Africa,,2010,32.97,50.83,4.22,6.26,5.73
+Western Asia and Northern Africa,,2011,33.88,50.53,4.06,6.21,5.32
+Western Asia and Northern Africa,,2012,34.73,50.26,3.93,6.2,4.89
+Western Asia and Northern Africa,,2013,35.55,50.01,3.79,6.15,4.5
+Western Asia and Northern Africa,,2014,36.37,49.75,3.65,6.11,4.11
+Western Asia and Northern Africa,,2015,37.22,49.47,3.52,6.07,3.73
+Western Asia and Northern Africa,,2016,38.05,49.17,3.37,6.07,3.35
+Western Asia and Northern Africa,,2017,38.88,48.75,3.21,5.92,3.24
+Western Asia and Northern Africa,,2018,39.69,48.32,3.08,5.84,3.07
+Western Asia and Northern Africa,,2019,40.36,47.96,2.99,5.76,2.92
 Western Asia and Northern Africa,,2020,41.73,46.72,2.95,5.78,2.82
+Latin America and the Caribbean,,2000,15.18,58.96,5.22,11.01,9.63
+Latin America and the Caribbean,,2001,15.61,59.33,5.19,10.73,9.14
+Latin America and the Caribbean,,2002,16.03,59.67,5.17,10.45,8.68
+Latin America and the Caribbean,,2003,16.8,59.66,5.16,10.17,8.21
+Latin America and the Caribbean,,2004,17.62,59.59,5.14,9.89,7.76
+Latin America and the Caribbean,,2005,18.38,60.15,4.92,9.15,7.4
+Latin America and the Caribbean,,2006,19.2,60.07,4.89,8.99,6.84
+Latin America and the Caribbean,,2007,20.05,59.98,4.85,8.71,6.42
+Latin America and the Caribbean,,2008,20.9,59.87,4.81,8.42,6
+Latin America and the Caribbean,,2009,21.77,59.74,4.77,8.15,5.58
+Latin America and the Caribbean,,2010,22.65,59.59,4.72,7.87,5.17
+Latin America and the Caribbean,,2011,23.54,59.42,4.67,7.59,4.77
+Latin America and the Caribbean,,2012,24.6,59.09,4.63,7.31,4.37
+Latin America and the Caribbean,,2013,25.67,58.74,4.58,7.04,3.98
+Latin America and the Caribbean,,2014,26.76,58.36,4.53,6.77,3.6
+Latin America and the Caribbean,,2015,27.87,57.94,4.48,6.48,3.24
+Latin America and the Caribbean,,2016,29,57.5,4.43,6.22,2.86
+Latin America and the Caribbean,,2017,30.3,56.81,4.37,6.03,2.49
+Latin America and the Caribbean,,2018,31.54,56.2,4.33,5.78,2.16
+Latin America and the Caribbean,,2019,32.8,55.58,4.27,5.54,1.81
 Latin America and the Caribbean,,2020,34.07,54.97,4.22,5.23,1.51
+Sub-Saharan Africa,,2000,14.3,8.41,15.17,29.82,32.3
+Sub-Saharan Africa,,2001,14.59,8.56,15.39,29.87,31.59
+Sub-Saharan Africa,,2002,14.93,8.69,15.56,29.96,30.86
+Sub-Saharan Africa,,2003,15.28,8.82,15.72,30.06,30.12
+Sub-Saharan Africa,,2004,15.63,8.95,15.88,30.15,29.39
+Sub-Saharan Africa,,2005,15.99,9.08,16.05,30.23,28.64
+Sub-Saharan Africa,,2006,16.36,9.21,16.22,30.31,27.89
+Sub-Saharan Africa,,2007,16.71,9.34,16.39,30.38,27.18
+Sub-Saharan Africa,,2008,17.08,9.48,16.57,30.45,26.41
+Sub-Saharan Africa,,2009,17.43,9.66,16.75,30.51,25.65
+Sub-Saharan Africa,,2010,17.79,9.83,16.93,30.56,24.89
+Sub-Saharan Africa,,2011,18,9.91,16.98,30.44,24.68
+Sub-Saharan Africa,,2012,18.35,10.1,17.15,30.47,23.93
+Sub-Saharan Africa,,2013,18.71,10.29,17.33,30.49,23.19
+Sub-Saharan Africa,,2014,19.06,10.48,17.5,30.51,22.44
+Sub-Saharan Africa,,2015,19.42,10.68,17.68,30.52,21.7
+Sub-Saharan Africa,,2016,19.79,10.87,17.86,30.53,20.95
+Sub-Saharan Africa,,2017,20.19,11.08,18.06,30.63,20.04
+Sub-Saharan Africa,,2018,20.48,11.26,18.25,30.68,19.34
+Sub-Saharan Africa,,2019,20.82,11.45,18.42,30.66,18.65
 Sub-Saharan Africa,,2020,21.06,11.63,18.53,30.79,17.99
+Low income,,2000,14.18,9.51,8.83,29.72,37.76
+Low income,,2001,14.33,9.56,8.99,30.11,37.01
+Low income,,2002,13.35,11.17,9.3,30.11,36.08
+Low income,,2003,13.6,11.19,9.51,30.51,35.19
+Low income,,2004,13.84,11.25,9.73,30.91,34.29
+Low income,,2005,14.13,11.33,9.98,31.33,33.23
+Low income,,2006,14.41,11.44,10.24,31.75,32.15
+Low income,,2007,14.69,11.58,10.47,32.13,31.13
+Low income,,2008,14.97,11.76,10.73,32.52,30.03
+Low income,,2009,15.24,11.91,10.98,32.92,28.95
+Low income,,2010,15.5,12.03,11.24,33.33,27.9
+Low income,,2011,15.59,11.89,11.4,33.45,27.67
+Low income,,2012,15.88,11.9,11.66,33.9,26.67
+Low income,,2013,16.17,11.89,11.92,34.34,25.68
+Low income,,2014,16.47,11.89,12.18,34.78,24.68
+Low income,,2015,16.76,11.93,12.44,35.21,23.66
+Low income,,2016,17.08,11.98,12.69,35.62,22.63
+Low income,,2017,17.39,12.04,12.97,36.08,21.52
+Low income,,2018,17.65,12.11,13.22,36.41,20.61
+Low income,,2019,17.91,12.21,13.46,36.72,19.7
 Low income,,2020,18.13,12.28,13.69,37.05,18.85
