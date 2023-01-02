@@ -1,11 +1,9 @@
-let box = document.querySelector("#sanitation");
+let box = document.querySelector("#sanitation"); // select the proper box in the section
 let width = box.offsetWidth - 100;
 let height = box.offsetHeight - 100;
 
 // set the dimensions and margins of the graph
-// set the dimensions and margins of the graph
 const margin = { top: 200, right: 60, bottom: -30, left: 60 };
-// var margin = {top: 60, right: 230, bottom: 50, left: 50}
 const plotHeight = height - margin.top - margin.bottom;
 const plotWidth = width - margin.left - margin.right;
 var keysMap = {
@@ -24,7 +22,7 @@ var svg = d3
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-svg
+svg // graph title
   .append("text")
   .attr("x", width / 2)
   .attr("y", -100)
@@ -34,7 +32,7 @@ svg
   .style("font-weight", "bold");
 let data;
 var index = 0
-
+// get the data
 d3.csv("assets/data/sanitation_Acess.csv", function (json) {
   json.forEach(function (d) {
     (d["san_sm"] = +d["san_sm"]),
@@ -51,8 +49,8 @@ var allGroup = []
 for(let i =2000; i<= 2020; i++)
   allGroup.push(i)
 
-  var subgroups = data.columns.slice(3);
-  // List of groups. Value of the first column called group -> I show them on the X axis
+  var subgroups = data.columns.slice(3); // list of groups from colum data
+
   var groups = d3.map(data, function (d) {
     return d.Entity;
   });
@@ -79,24 +77,21 @@ for(let i =2000; i<= 2020; i++)
   // color palette = one color per subgroup
   var color = d3.scaleOrdinal().domain(subgroups).range(['#00876c','#78ab63','#dac767','#e18745','#d43d51']);
 
-  //stack the data? --> stack per subgroup
+  //stack the data: stack per subgroup
   var stackedData = d3.stack().keys(subgroups)(data);
-  // ----------------
-  // Highlight a specific subgroup when hovered
-  // ----------------
 
-
+// we first start with year 2000
 let filteredData = data.filter(x => x['Year'] == '2000')
       filteredData.columns = data.columns
 update(filteredData, 2000)
-
+// we then iterate trough all years
   d3.interval(function(){
     if (index >= allGroup.length)
         index = 0
     update(sampleFromData(data, allGroup[index]), allGroup[index]); 
     index++ 
   }, 1000);
-
+// samples data based on year
   function sampleFromData(data, year){
     let filteredData = data.filter(x => x['Year'] == year.toString())
     filteredData.columns = data.columns
@@ -123,27 +118,25 @@ update(filteredData, 2000)
       if (i > 1 && i != 4) return -60 + (i - 2) * (size + 5);
       else if (i == 4) return -60;
       else return -60 + i * (size + 5);
-    }) // 100 is where the first dot appears. 25 is the distance between dots
+    }) 
     .attr("width", size)
     .attr("height", size)
     .style("fill", function (d) {
       return color(d.key);
     })
 
-  // Add one dot in the legend for each name.
+  //  legend for each name.
 
   svg
     .selectAll("mylabels")
     .data(stackedData)
     .enter()
     .append("text")
-    // .attr("x",  margin.left + 10 + size*1.2)
     .attr("x", function (d, i) {
       if (i > 1 && i != 4) return margin.left + 160 + size * 1.2;
       else if (i == 4) return margin.left + 260 + size * 1.2;
       else return margin.left + 10 + size * 1.2;
     })
-    // .attr("y", function(d,i){ return margin.top  + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
     .attr("y", function (d, i) {
       if (i > 1 && i != 4) return -60 + (i - 2) * (size + 5) + size / 2;
       else if (i == 4) return -60 + size / 2;
@@ -162,9 +155,9 @@ update(filteredData, 2000)
 
         d3.selectAll("svg text")
         .filter(function() {
-          return /^Share/.test(d3.select(this).text());  // Check if text begin with a "C"
+          return /^Share/.test(d3.select(this).text());  // select title
         })
-        .text("Share of population with access to sanitation facilities " + year.toString());
+        .text("Share of population with access to sanitation facilities " + year.toString()); // change title with new year
       var stack = d3.stack().keys(subgroups)
       subgroups.forEach(function(key, key_index){
   
@@ -172,13 +165,12 @@ update(filteredData, 2000)
               .data(stack(filteredData)[key_index], function(d){ return d.data.Entity + "-" + key; });
   
           bar
-            .transition()
+            .transition() // transition the data with new year
               .attr("x", function(d){ return x(d.data.Entity); })
               .attr("y", function(d){ return y(d[1]); })
               .attr("height", function(d){ return y(d[0]) - y(d[1]); });
   
-          bar.enter().append("rect")
-              //.attr("class", function(d){ return "bar bar-" + key; })
+          bar.enter().append("rect") // change bars
               .attr("class", function (d) { return "myRect " + key;}) // Add a class to each subgroup: their name
               .attr("x", function(d){ return x(d.data.Entity); })
               .attr("y", function(d){ return y(d[1]); })

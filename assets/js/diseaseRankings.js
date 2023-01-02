@@ -1,17 +1,17 @@
-// const width = 680
-// const height = 480
-let box = document.querySelector("#disease_rankings");
+let box = document.querySelector("#disease_rankings"); // select the proper box in the section
 let width = box.offsetWidth;
 let height = box.offsetHeight;
 const margin = { top: 80, right: 50, bottom: 60, left: 170 };
 const plotHeight = height - margin.top - margin.bottom;
 const plotWidth = width - margin.left - margin.right;
+// create the svg
 const svg = d3
   .select("#disease_rankings")
   .append("svg")
   .attr("xmlns", "http://www.w3.org/2000/svg")
   .attr("width", width)
   .attr("height", height);
+// add title
 svg
   .append("text")
   .attr("x", width / 2 + 100)
@@ -39,15 +39,11 @@ const plotOutline = svg
   .style("fill", "#00AFDB");
 
 const g = svg.append("g").attr("transform", `translate(0, ${plotHeight})`);
-
+// make the scales
 const scaleX = d3.scaleLinear().range([0, plotWidth]);
 const scaleY = d3.scaleBand().rangeRound([0, plotHeight]).paddingInner(0.1);
 
-// Axis setup
-// const xaxis = d3.axisTop().scale(scaleX);
-// const g_xaxis = g.append("g").attr("class", "x axis");
-// const yaxis = d3.axisLeft().scale(scaleY);
-// const g_yaxis = g.append("g").attr("class", "y axis");
+// get the data
 d3.csv("assets/data/disease_burden.csv", function (json) {
   json.forEach(function (d) {
     (d["disease"] = d["disease"]), (d["value"] = +d["value"]);
@@ -57,13 +53,8 @@ d3.csv("assets/data/disease_burden.csv", function (json) {
   });
   update(json);
 });
-// d3.csv("disease_burden.csv", d3.autoType).then((json) => {
-//     console.log(json)
-//     data = json;
-//     data.sort(function(b, a) {
-//         return a.value - b.value;});
-//     update(data);
-// });
+
+// this plots the data
 function update(new_data) {
   scaleX.domain([0, d3.max(new_data, (d) => d.value)]);
   scaleY.domain(new_data.map((d) => d.disease));
@@ -71,6 +62,7 @@ function update(new_data) {
     .append("g")
     .attr("transform", `translate(${margin.left}, ${plotHeight + margin.top})`)
     .call(d3.axisBottom(scaleX));
+  // x axis labels
   axisX
     .selectAll("text")
     .attr("transform", "translate(-10,0)rotate(-45)")
@@ -83,6 +75,7 @@ function update(new_data) {
     .style("font-weight", "light")
     .style("fill", "#000")
     .style("stroke", "none");
+  // y axis labels
   svg
     .append("text")
     .attr("text-anchor", "end")
@@ -92,9 +85,10 @@ function update(new_data) {
     .style("font-size", "14px")
     .style("font-weight", "bold");
 
-  documentOutline.remove();
+  documentOutline.remove(); // remove the outlines
   plotOutline.remove();
   axisY.call((g) => g.select(".domain").remove());
+  // make the plot bars
   const bars = svg
     .append("g")
     .attr("transform", `translate(${margin.left}, ${margin.top})`)

@@ -1,9 +1,8 @@
-let box = document.querySelector("#disease_rankings");
+let box = document.querySelector("#disease_rankings"); // select the proper box in the section
 let width = box.offsetWidth - 100;
 let height = box.offsetHeight - 100;
 // set the dimensions and margins of the graph
 const margin = { top: 100, right: 60, bottom: 100, left: 60 };
-// var margin = {top: 60, right: 230, bottom: 50, left: 50}
 const plotHeight = height - margin.top - margin.bottom;
 const plotWidth = width - margin.left - margin.right;
 
@@ -15,7 +14,7 @@ var svg = d3
   .attr("height", plotHeight + margin.top + margin.bottom)
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-svg
+svg // add title to svg
   .append("text")
   .attr("x", width / 2)
   .attr("y", margin.top / 2)
@@ -24,9 +23,7 @@ svg
   .style("font-size", "18px")
   .style("font-weight", "bold");
 
-let data;
-// Parse the Data
-//d3.csv("https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/5_OneCatSevNumOrdered_wide.csv", function(data) {
+let data; // get the data
 d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
   json.forEach(function (d) {
     (d["Urban population not living in slums"] =
@@ -36,14 +33,9 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
   });
 
   data = json;
-  // List of groups = header of the csv files
-  //var keys = data.columns.slice(1)
   var keys = json.columns.slice(-2);
-  // console.log(keys);
-  // color palette
   var color = d3.scaleOrdinal().domain(keys).range(['#00876c','#d43d51']);
-  //stack the data?
-  var stackedData = d3.stack().keys(keys)(data);
+  var stackedData = d3.stack().keys(keys)(data); // stack data
 
   //////////
   // AXIS //
@@ -61,7 +53,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
   var xAxis = svg
     .append("g")
     .attr("transform", `translate(${margin.left}, ${plotHeight })`)
-    .call(d3.axisBottom(x).ticks(5).tickFormat((d,i) => d.toString()));
+    .call(d3.axisBottom(x).ticks(5).tickFormat((d,i) => d.toString())); // make the dates into strings on x axis
 
 
   // Add X axis label:
@@ -119,10 +111,9 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
     .extent([
       [0, 0],
       [plotWidth, plotHeight],
-    ]) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+    ]) // initialise the brush area: start at 0,0 and finishes at width,height
     .on("end", updateChart); // Each time the brush selection changes, trigger the 'updateChart' function
 
-  // Create the scatter variable: where both the circles and the brush take place
   var areaChart = svg
     .append("g")
     .attr("clip-path", "url(#clip)")
@@ -191,10 +182,8 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
   // HIGHLIGHT GROUP //
   //////////
 
-  // What to do when one group is hovered
+  // hover functionality
   var highlight = function (d) {
-    // console.log("." + d);
-
     // reduce opacity of all groups
     d3.selectAll(".myArea").style("opacity", 0.1);
     // expect the one that is hovered
@@ -223,16 +212,16 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
     .attr("x", margin.left + 10)
     .attr("y", function (d, i) {
       return margin.top + i * (size + 5);
-    }) // 100 is where the first dot appears. 25 is the distance between dots
+    }) 
     .attr("width", size)
     .attr("height", size)
     .style("fill", function (d) {
       return color(d);
     })
-    .on("mouseover", highlight)
+    .on("mouseover", highlight) // highlight in the legend as well
     .on("mouseleave", noHighlight);
 
-  // Add one dot in the legend for each name.
+  // the legend for each name.
   svg
     .selectAll("mylabels")
     .data(keys)
@@ -241,7 +230,7 @@ d3.csv("assets/data/urban-pop-in-out-of-slums.csv", function (json) {
     .attr("x", margin.left + 10 + size * 1.2)
     .attr("y", function (d, i) {
       return margin.top + i * (size + 5) + size / 2;
-    }) // 100 is where the first dot appears. 25 is the distance between dots
+    }) 
     .style("fill", function (d) {
       return color(d);
     })
